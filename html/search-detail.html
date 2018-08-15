@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>嘉宾大学</title>
+  <link rel="icon" type="image/x-icon" href="../images/wetalkTV.ico" />
+  <link rel="stylesheet" href="../fonts/iconfont.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/animate.min.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/all.css">
+  <link rel="stylesheet" href="../css/search.css">
+</head>
+<body>
+  <div class="centera cen">
+    <p class="sea-inp"><input type="text" placeholder="请输入关键词"><i class="icon iconfont icon-iconsousuo"></i></p>
+
+    <div class="con">
+      <dl class="list">
+        <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
+        <dd>
+          <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
+          <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
+        </dd>
+      </dl>
+      <dl class="list">
+        <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
+        <dd>
+          <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
+          <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
+        </dd>
+      </dl>
+      <dl class="list">
+        <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
+        <dd>
+          <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
+          <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
+        </dd>
+      </dl>
+        <p class="load">加载更多</p>
+    </div>
+    <div class="con-none">
+      <i class="icon iconfont icon-weibiaoti3"></i>
+      <p>没有搜索到相关内容哦！</p>
+    </div>
+  </div>
+
+  <script src="../js/jquery-1.10.1.min.js"></script>
+  <script src="../js/swiper.min.js"></script>
+  <script src="../js/iscroll.js"></script>
+  <script src="../js/index.js"></script>
+  <script>
+      $(document).ready(function(){
+        var mySwiper = new Swiper(".swiper-container",{
+                      autoplay:2000,
+                      loop:true,//循环
+                      pagination : '.swiper-pagination',
+                      paginationClickable :true,
+                      observer:true,//修改swiper自己或子元素时，自动初始化swiper
+                      observeParents:true,//修改swiper的父元素时，自动初始化swiper
+                  })
+      });
+      
+    </script>
+</body>
+</html>
