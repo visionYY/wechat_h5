@@ -51,7 +51,15 @@
     </dl>
 
     <div class="cover">
-      
+      <img src="../images/icon_huishouye@2x.png" alt="" class="sy" onclick="window.location.href='index.html'">
+      <img src="../images/erweima.png" alt="" class="code">
+    </div>
+    <div class="cover1">
+      <div class="box">
+        <img src="../images/code.png" alt="" class="co">
+        <p class="co_t">关注“嘉宾大学”公众号，</p>
+        <p class="co_t co1">与众多大咖一起互动学习吧！</p>
+      </div>
     </div>
   </div>
 
@@ -62,7 +70,12 @@
   <script src="../js/swiper.min.js"></script>
   <script>
     $(document).ready(function () {
-      
+      $('.code').click(function(){
+        $('.cover1').show();
+      })
+      $('.cover1').click(function(){
+        $('.cover1').hide();
+      })
     })
   </script>
 </body>
