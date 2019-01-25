@@ -1,0 +1,199 @@
+@keyframes vhide {0% {opacity: 1;}100% {opacity: 0;}}
+
+@-webkit-keyframes vhide {0% {opacity: 1;}100% {opacity: 0;}}
+
+.vhidden {
+  animation: vhide 3.5s ease-in;
+  -webkit-animation: vhide 3.5s ease-in;
+  animation-fill-mode:forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.wengaotab{
+  position: absolute;
+  top: 1.8rem;
+  right: .08rem;
+}
+.bad-video {
+  position: relative;
+  /* overflow: hidden; */
+  background-color: #CCCCCC;
+  width:100%;
+  /* height:2.11rem; */
+}
+.bad-video .pause {
+  position: absolute;
+  width: .33rem;
+  z-index: 99;
+  top: 50%;
+  display: none;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.bad-video .vtop{
+  position: absolute;
+  width: .17rem;
+  z-index: 99;
+  top: 50%;
+  left: 35%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.bad-video .vbelow{
+  position: absolute;
+  width: .17rem;
+  z-index: 99;
+  top: 50%;
+  left: 65%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.bad-video .vaudio{
+  position: absolute;
+  width: .15rem;
+  z-index: 99;
+  top: 50%;
+  left: 93%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.bad-video .vcollect{
+  position: absolute;
+  width: .175rem;
+  z-index: 99;
+  top: 12%;
+  left: 93%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.bad-video .vplay{
+  position: absolute;
+  width: .33rem;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.bad-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit:fill;
+}
+
+.bad-video .nopay{
+  width:100%;
+  height:1.8rem;
+  background: rgba(0, 0, 0, 1);
+}
+.nopay_com{
+  width:100%;
+  text-align: center;
+  font-size:.1rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(255,255,255,1);
+  position: absolute;
+  top:.6rem;
+}
+.nopay_btn{
+  width:1.2rem;
+  height:.32rem;
+  background:rgba(48,92,186,1);
+  border-radius:2px;
+  font-size:.1rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(255,255,255,1);
+  border: none;
+  position: absolute;
+  top:.8rem;
+  left: 1rem;
+}
+
+.bad-video .controls {
+  width: 100%;
+  height: .3rem;
+  line-height: .3rem;
+  font-size: 0.18rem;
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .55);
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 .15rem;
+}
+
+.bad-video .controls>* {
+  flex: 1;
+}
+
+.bad-video .controls>*:nth-child(1) {
+  position: absolute;
+  top: .01rem;
+  left: .44rem;
+  width: 64%;
+}
+
+.bad-video .controls>*:nth-child(2) {
+  flex: 8;
+  text-align: center;
+}
+
+.bad-video .controls .progressBar {
+  margin: .13rem 5%;
+  position: relative;
+  width: 90%;
+  height: .02rem;
+  background-color: rgba(86,85,86,1);
+  border-radius: 10px;
+}
+
+.bad-video .controls .timeBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(215, 170, 111, 1);
+  border-radius: 10px;
+}
+.current{
+  font-size: .12rem;
+  float: left;
+}
+.duration{
+  font-size: .12rem;
+  float: right;
+}
+.fill{
+  width: .15rem;
+  height: .15rem;
+  margin-left: .17rem;
+  margin-top: .07rem;
+}
+#cricle{
+  content: " ";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background: rgba(255,255,255,1);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -5px;
+  margin-left: -5px;
+  cursor: pointer;
+  z-index:99;
+}
+
+@media screen and (min-width:450px){
+  .bad-video .controls>*:nth-child(1) {
+    width: 75%;
+  }
+}

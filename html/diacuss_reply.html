@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>回复详情</title>
+  <link rel="icon" type="image/x-icon" href="../images/wetalkTV.ico" />
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/diacuss_reply.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <p class="dia_tit">是谁拽住了三只松鼠的尾巴，导致其IPO失败？</p>
+    <div class="write">
+      <textarea name="" id="" placeholder="在这里说说你的观点，观点还可以生成精美海报哦~"></textarea>
+    </div>
+  </div>
+  <div class="cover">
+    <div class="box2">
+      <p class="boximg"><img src="../images/icon_yifabu@2x.png" alt=""></p>
+      <p class="boxtit">已发布</p>
+      <div class="btns">
+        <p class="yesl">关闭</p>
+        <p class="nor">生成海报</p>
+      </div>
+    </div>
+  </div>
+  <div class="cover1">
+    <div class="box3">
+      <div class="btop">
+        <p class="tuz"><img src="../images/icon_tuzi@2x.png" alt=""></p>
+        <p class="tz_tit">以下文字可能含有“涉政”信息， 请修改后重新提交！</p>
+      </div>
+      <p class="tz_con">“上市是一条捷径，三只松鼠有自身短板，投资机构并
+          不心，因此才有对赌协议。未来食品零售电构并不心，
+          因此才有对赌协议。未来食品零售电因此才有对赌协
+          </p>
+      <button class="tz_btn" >去修改</button>
+    </div>
+  </div>
+  <footer>
+    <p class="issue">发布</p>
+  </footer>
+  <script src="../js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // $('.detailsBot dl').each(function(index) {
+      //   $(this).eq(index).on('touchstart',function(e){
+      //     time = setTimeout(function(){
+      //       $('.cover').fadeIn()
+      //       $('.yes').click(function(){
+      //         $('.box1').hide();
+      //         $('.box2').show();
+      //       })
+      //       $('.no').click(function(){
+      //         $('.cover').hide();
+      //       })
+      //     }, 500);
+      //   })
+      // })
+      $('.issue').click(function(){
+        $('.cover').fadeIn()
+      })
+    })
+  </script>
+</body>
+
+</html>

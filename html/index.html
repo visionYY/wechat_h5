@@ -1,211 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>嘉宾大学</title>
   <link rel="icon" type="image/x-icon" href="../images/wetalkTV.ico" />
-  <link rel="stylesheet" href="../fonts/iconfont.css">
   <link rel="stylesheet" href="../css/swiper.min.css">
-  <link rel="stylesheet" href="../css/animate.min.css">
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/all.css">
   <link rel="stylesheet" href="../css/index.css">
 </head>
+  <style>
+      /* 清除标签默认边距 */
+      body,
+      ul,
+      li,
+      ol,
+      img {
+        margin: 0;
+        padding: 0;
+      }
+  
+      /* 清除 ul 等标签前面的“小圆点” */
+      ul,
+      li,
+      ol {
+        list-style-type: none;
+      }
+  
+      /* 图片自适应 */
+      .box img,.box2 img {
+        width: 100%;
+        height: 200px;
+        border: none;
+        /* ie8 */
+        display: block;
+        -ms-interpolation-mode: bicubic;
+        /*为了照顾ie图片缩放失真*/
+      }
+  
+      /* 轮播图最外层盒子 */
+      .carousel,.carousel2 {
+        position: relative;
+        overflow: hidden;
+      }
+  
+      .carousel ul,.carousel2 ul {
+        /* 这个高度需要在JS里面动态添加 */
+      }
+  
+      .carousel ul li,.carousel2 ul li {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        /* 使用 transform:translaX(300%) 暂时将 li 移动到屏幕外面去*/
+        -webkit-transform: translateX(300%);
+        transform: translateX(300%);
+      }
+  
+      /* 小圆点盒子 */
+      .carousel .points,.carousel2 .points2 {
+        /* 未知宽度的盒子，使用 absolute 定位，结合 transform 的方式进行居中 */
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        transform: translateX(-50%);
+      }
+  
+      /* 小圆点 */
+      .carousel .points li,.carousel2 .points2 li {
+        width:.05rem;
+        height:.025rem;
+        float:left;
+        border-radius:.03rem;
+        background:rgba(125,125,125,1);
+        margin-left:5px;
+      }
+  
+      /* 选中小圆点的样式类 */
+      .carousel .points li.active,.carousel2 .points2 li.active {
+        width:.08rem;
+        height:.025rem;
+        float:left;
+        border-radius:.03rem;
+        background:rgba(229,229,229,1);
+        margin-left:5px;
+      }
+    </style>
 <body>
-  <div data-role="page" id="pageone">
-    <div data-role="panel" id="myPanel"> 
-      <div class="pagelist">
-        <h4 id="home" class="first">首页</h4>
-        <h4 class="pagetit">品牌节目</h4>
-        <ul class="test">
-          <li>我有嘉宾</li>
-          <li>企业纪录片</li>
-          <li>企业纪录片</li>
+  <div class="wrapper">
+    <div class="banner">
+      <section class="carousel">
+        <ul class="box">
+          <li><a href="#"><img src="../images/2.JPG" alt=""></a></li>
+          <li><a href="#"><img src="../images/banner.jpeg" alt=""></a></li>
+          <li><a href="#"><img src="../images/2.JPG" alt=""></a></li>
         </ul>
-        <h4 class="pagetit">品牌节目</h4>
-        <ul class="test">
-          <li>我有嘉宾</li>
-          <li>企业纪录片</li>
-        </ul>
-      </div>
-    </div> 
-  
-    <div data-role="header" class="ui-header">
-      <a href="#" id="pagehide"><i class="icon iconfont icon-mulu"></i></a>
-      <b><img src="../images/jiabindaxue_logo.png" alt=""></b>
-      <a href="search.html"><i class="icon iconfont icon-sousuo search"></i></a>
+        <ol class="points"></ol>
+      </section>
+      <!-- <video controls>
+        <source src="somevideo.webm" type="video/webm">
+        <source src="somevideo.mp4" type="video/mp4">
+      </video>  -->
     </div>
-  
-    <div data-role="main" class="ui-content">
-      <div class="banner">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="../images/banner.jpeg" />
-              <h2 class="gallerytitle">孙俪芈月造型亮相 清纯似少女</h2>
-            </div>
-            <div class="swiper-slide">
-              <img src="../images/banner.jpeg" />
-              <h2 class="gallerytitle">Angelababy弟弟曝光 五官精致颜值爆表</h2>
-            </div>
-            <div class="swiper-slide">
-              <img src="../images/banner.jpeg" />
-              <h2 class="gallerytitle">孙俪芈月造型亮相 清纯似少女</h2>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
+    <div class="classify">
+      <div class="classify1">
+        <img src="../images/jiabinpai@2x.png" alt="">
+      </div>
+      <div class="classify1">
+        <img src="../images/guojikecheng@2x.png" alt="">
+      </div>
+      <div class="classify1">
+        <img src="../images/gongkaike@2x.png" alt="">
+      </div>
+
+    </div>
+    <div class="diacuss_box">
+      <h4 class="dia_tit"><em></em>今日议题<img src="../images/icon_gengduo@2x.png" alt=""></h4>
+      <h3 class="dia_topic">是谁拽住了三只松鼠的尾巴，导致其IPO失败？</h3>
+      <p class="dia_label">出题人：周伯通（创世纪科技CEO）</p>
+      <p class="dia_con">12月12日晚，证监会对外发布消息称，由于三只松鼠相关事项需进一步核查，取消对其发行申报文件的审核。这是新一届 发审委成立以来，首家IPO申请被取消审核的企业。那么到底是 谁拽住了三只松鼠的尾巴，导致其其其其IPO
+      </p>
+      <div class="observer">
+        <p class="ob_name"><img src="../images/jbdx.png" alt="">peter</p>
+        <p class="ob_con">上市是一条捷径，三只松鼠有自身短板，投资机构并不放心，因此才有对赌协议。未来食品零售电商行业发展，还需平台提高准入门槛，加强前置事项规范和管理，加强...</p>
+      </div>
+    </div>
+    <div class="boutique_box">
+      <h4 class="bou_tit">精品课</h4>
+      <div class="banner2">
+        <section class="carousel2">
+          <ul class="box2">
+            <li><a href="#"><img src="../images/2.JPG" alt=""></a></li>
+            <li><a href="#"><img src="../images/banner.jpeg" alt=""></a></li>
+            <li><a href="#"><img src="../images/2.JPG" alt=""></a></li>
+          </ul>
+          <ol class="points2"></ol>
+        </section>
         <!-- <video controls>
           <source src="somevideo.webm" type="video/webm">
           <source src="somevideo.mp4" type="video/mp4">
         </video>  -->
       </div>
-      <div id="centera">
-        <div class="orangerb">
-          <ul id="oranger"> 
-            <li class="hover">内容一</li> 
-            <li>内容二</li> 
-            <li>内容三</li> 
-            <li>内容四</li> 
-            <li>内容5</li> 
-            <li>内容6</li> 
-            <li>内容7</li>
-          </ul>
-        </div>
-        <div id="tablea" class="tablea">
-          <div class="box">
-              <dl class="list">
-                  <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
-                  <dd>
-                    <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
-                    <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
-                  </dd>
-              </dl>
-              <dl class="list">
-                  <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
-                  <dd>
-                    <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
-                    <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
-                  </dd>
-              </dl>
-              <dl class="list">
-                  <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
-                  <dd>
-                    <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
-                    <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
-                  </dd>
-              </dl>
-              <dl class="list">
-                  <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
-                  <dd>
-                    <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
-                    <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
-                  </dd>
-              </dl>
-          </div>
-          <div class="box">2222</div>
-          <div class="box">3333</div>
-          <div class="box">4444</div>
-          <div class="box">5</div>
-          <div class="box">6</div>
-        </div>
-      </div>
-      <div class="tutor"> 
-        <h4 class="tutor-tit">导师与学院<span>更多<i class="icon iconfont icon-gengduo"></i></span></h4>
-        <div class="tutor-con">
-          <ul class="tutor-list"> 
-            <li>
-              <span class="kind">导师</span>
-              <img src="../images/WechatIMG2.jpeg" alt="">
-              <p class="name">周鸿伟</p>
-              <p class="con">易到创始人</p>
-            </li> 
-            <li>
-              <span class="kind">导师</span>
-              <img src="../images/WechatIMG2.jpeg" alt="">
-              <p class="name">周鸿伟</p>
-              <p class="con">易到创始人</p>
-            </li> 
-            <li>
-              <span class="kind">导师</span>
-              <img src="../images/WechatIMG2.jpeg" alt="">
-              <p class="name">周鸿伟</p>
-              <p class="con">易到创始人</p>
-            </li> 
-          </ul>
-        </div>
-      </div>
-      <div class="more-list">
-        <dl class="list">
-            <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
-            <dd>
-              <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
-              <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
-            </dd>
-        </dl>
-        <dl class="list">
-            <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
-            <dd>
-              <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
-              <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
-            </dd>
-        </dl>
-        <dl class="list">
-            <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
-            <dd>
-              <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
-              <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
-            </dd>
-        </dl>
-        <dl class="list">
-            <dt class="list-img"><img src="../images/img1.png" alt=""></dt>
-            <dd>
-              <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
-              <p class="list-but"><span class="sp-time">三小时前</span><span class="sp-kind">我有嘉宾</span></p>
-            </dd>
-        </dl>
-        <div id="load">
-          加载更多
-        </div>
-      </div>
     </div>
-
-    <div class="footer">
-      <div class="top">
-          <p class="foo-tit">关于嘉宾传媒</p>
-          <ul class="foo-nav">
-            <li><a href="#">关于我们</a></li>
-            <li><a href="#">加入我们</a></li>
-            <li><a href="#">寻求报道</a></li>
-          </ul>
-      </div>
-      <div class="bot">
-        2018 嘉宾传媒 m.wetalktv.cn
-      </div>
+    <div class="business_box">
+      <h4 class="bus_tit">商业案例课</h4>
+      <dl class="bus_list">
+          <a href="#">
+            <dt class="list-img"><img src="../images/tutor.jpeg" alt=""></dt>
+            <dd>
+              <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
+              <p class="list_int">刘庆峰<span>科大讯飞创始人</span></p>
+              <p class="list-but"><img src="../images/icon_liulan@2x.png" alt="">10000</p>
+            </dd>
+          </a>
+      </dl>
+      <dl class="bus_list">
+          <a href="#">
+            <dt class="list-img"><img src="../images/tutor.jpeg" alt=""></dt>
+            <dd>
+              <p class="list-tit">健租宝李锦全：不追共享概念健租宝李锦全：不追共享概念</p>
+              <p class="list_int">刘庆峰<span>科大讯飞创始人</span></p>
+              <p class="list-but"><img src="../images/icon_liulan@2x.png" alt="">10000</p>
+            </dd>
+          </a>
+      </dl>
     </div>
-  </div> 
+  </div>
 
-  <script src="../js/jquery-1.10.1.min.js"></script>
+  <footer class="foot">
+    <a href="index.html" class="Imgbox one clo"><img src="../images/icon_faxiandianliang@2x.png" />发现</a>
+    <a href="diacuss.html" class="Imgbox"><img src="../images/icon_meiriyiyi@2x.png" />议一议</a>
+    <a href="mine.html" class="Imgbox"><img src="../images/icon_wode@2x.png" />我的</a>
+  </footer>
+
+
+
+  <script src="../js/jquery.min.js"></script>
   <script src="../js/swiper.min.js"></script>
-  <script src="../js/iscroll.js"></script>
-  <script src="../js/index.js"></script>
   <script>
-    $(document).ready(function(){
-      var mySwiper = new Swiper(".swiper-container",{
-                    autoplay:2000,
-                    loop:true,//循环
-                    pagination : '.swiper-pagination',
-                    paginationClickable :true,
-                    observer:true,//修改swiper自己或子元素时，自动初始化swiper
-                    observeParents:true,//修改swiper的父元素时，自动初始化swiper
-                })
-      $("#pagehide").click(function(){
-        $("#myPanel").toggle()
-    })
-    });
+      window.onload = function () {
+        var carousel2 = document.querySelector('.carousel2');
+        var carouselUl2 = carousel2.querySelector('.box2');
+        var carouselLis2 = carouselUl2.querySelectorAll('li');
+        var points2 = carousel2.querySelector('.points2');
+        // 屏幕的宽度
+        var screenWidth2 = document.documentElement.offsetWidth;
+        var timer2 = null;
     
-  </script>
+        // 设置 ul 的高度
+        carouselUl2.style.height = carouselLis2[0].offsetHeight + 'px';
+    
+        // 动态生成小圆点
+        for (var i = 0; i < carouselLis2.length; i++) {
+          var li2 = document.createElement('li');
+          if (i == 0) {
+            li2.classList.add('active');
+          }
+          points2.appendChild(li2);
+        }
+    
+        // 初始三个固定的位置
+        var left2 = carouselLis2.length - 1;
+        var center2 = 0;
+        var right2 = 1;
+    
+        // 归位（多次使用，封装成函数）
+        setTransform2();
+    
+        // 调用定时器
+        timer2 = setInterval(showNext2, 2000);
+    
+        // 分别绑定touch事件
+        var startX2 = 0; // 手指落点
+        var startTime2 = null; // 开始触摸时间
+        carouselUl2.addEventListener('touchstart', touchstartHandler2); // 滑动开始绑定的函数 touchstartHandler2
+        carouselUl2.addEventListener('touchmove', touchmoveHandler2); // 持续滑动绑定的函数 touchmoveHandler2
+        carouselUl2.addEventListener('touchend', touchendHandeler2); // 滑动结束绑定的函数 touchendHandeler2
+    
+        // 轮播图片切换下一张
+        function showNext2() {
+          // 轮转下标
+          left2 = center2;
+          center2 = right2;
+          right2++;
+          //　极值判断
+          if (right2 > carouselLis2.length - 1) {
+            right2 = 0;
+          }
+          //添加过渡（多次使用，封装成函数）
+          setTransition2(1, 1, 0);
+          // 归位
+          setTransform2();
+          // 自动设置小圆点
+          setPoint2();
+        }
+    
+        // 轮播图片切换上一张
+        function showPrev() {
+          // 轮转下标
+          right2 = center2;
+          center2 = left2;
+          left2--;
+          //　极值判断
+          if (left2 < 0) {
+            left2 = carouselLis2.length - 1;
+          }
+          //添加过渡
+          setTransition2(0, 1, 1);
+          // 归位
+          setTransform2();
+          // 自动设置小圆点
+          setPoint2();
+        }
+    
+        // 滑动开始
+        function touchstartHandler2(e) {
+          // 清除定时器
+          clearInterval(timer2);
+          // 记录滑动开始的时间
+          startTime2 = Date.now();
+          // 记录手指最开始的落点
+          startX2 = e.changedTouches[0].clientX;
+        }
+        // 滑动持续中
+        function touchmoveHandler2(e) {
+          // 获取差值 自带正负
+          var dx = e.changedTouches[0].clientX - startX2;
+          // 干掉过渡
+          setTransition2(0, 0, 0);
+          // 归位
+          setTransform2(dx);
+        }
+        //　滑动结束
+        function touchendHandeler2(e) {
+          // 在手指松开的时候，要判断当前是否滑动成功
+          var dx = e.changedTouches[0].clientX - startX2;
+          // 获取时间差
+          var dTime = Date.now() - startTime2;
+          // 滑动成功的依据是滑动的距离（绝对值）超过屏幕的三分之一 或者滑动的时间小于300毫秒同时滑动的距离大于30
+          if (Math.abs(dx) > screenWidth2 / 3 || (dTime < 300 && Math.abs(dx) > 30)) {
+            // 滑动成功了
+            // 判断用户是往哪个方向滑
+            if (dx > 0) {
+              // 往右滑 看到上一张
+              showPrev();
+            } else {
+              // 往左滑 看到下一张
+              showNext2();
+            }
+          } else {
+            // 添加上过渡
+            setTransition2(1, 1, 1);
+            // 滑动失败了
+            setTransform2();
+          }
+    
+          // 重新启动定时器
+          clearInterval(timer2);
+          // 调用定时器
+          timer2 = setInterval(showNext2, 2000);
+        }
+        // 设置过渡
+        function setTransition2(a, b, c) {
+          if (a) {
+            carouselLis2[left2].style.transition = 'transform 1s';
+          } else {
+            carouselLis2[left2].style.transition = 'none';
+          }
+          if (b) {
+            carouselLis2[center2].style.transition = 'transform 1s';
+          } else {
+            carouselLis2[center2].style.transition = 'none';
+          }
+          if (c) {
+            carouselLis2[right2].style.transition = 'transform 1s';
+          } else {
+            carouselLis2[right2].style.transition = 'none';
+          }
+        }
+    
+        //　封装归位
+        function setTransform2(dx) {
+          dx = dx || 0;
+          carouselLis2[left2].style.transform = 'translateX(' + (-screenWidth2 + dx) + 'px)';
+          carouselLis2[center2].style.transform = 'translateX(' + dx + 'px)';
+          carouselLis2[right2].style.transform = 'translateX(' + (screenWidth2 + dx) + 'px)';
+        }
+        // 动态设置小圆点的active类
+        var pointsLis2 = points2.querySelectorAll('li');
+    
+        function setPoint2() {
+          for (var i = 0; i < pointsLis2.length; i++) {
+            pointsLis2[i].classList.remove('active');
+          }
+          pointsLis2[center2].classList.add('active');
+        }
+
+
+
+        var carousel = document.querySelector('.carousel');
+        var carouselUl = carousel.querySelector('.box');
+        var carouselLis = carouselUl.querySelectorAll('li');
+        var points = carousel.querySelector('.points');
+        // 屏幕的宽度
+        var screenWidth = document.documentElement.offsetWidth;
+        var timer = null;
+
+        // 设置 ul 的高度
+        carouselUl.style.height = carouselLis[0].offsetHeight + 'px';
+
+        // 动态生成小圆点
+        for (var i = 0; i < carouselLis.length; i++) {
+          var li = document.createElement('li');
+          if (i == 0) {
+            li.classList.add('active');
+          }
+          points.appendChild(li);
+        }
+
+        // 初始三个固定的位置
+        var left = carouselLis.length - 1;
+        var center = 0;
+        var right = 1;
+
+        // 归位（多次使用，封装成函数）
+        setTransform();
+
+        // 调用定时器
+        timer = setInterval(showNext, 2000);
+
+        // 分别绑定touch事件
+        var startX = 0; // 手指落点
+        var startTime = null; // 开始触摸时间
+        carouselUl.addEventListener('touchstart', touchstartHandler); // 滑动开始绑定的函数 touchstartHandler
+        carouselUl.addEventListener('touchmove', touchmoveHandler); // 持续滑动绑定的函数 touchmoveHandler
+        carouselUl.addEventListener('touchend', touchendHandeler); // 滑动结束绑定的函数 touchendHandeler
+
+        // 轮播图片切换下一张
+        function showNext() {
+          // 轮转下标
+          left = center;
+          center = right;
+          right++;
+          //　极值判断
+          if (right > carouselLis.length - 1) {
+            right = 0;
+          }
+          //添加过渡（多次使用，封装成函数）
+          setTransition(1, 1, 0);
+          // 归位
+          setTransform();
+          // 自动设置小圆点
+          setPoint();
+        }
+
+        // 轮播图片切换上一张
+        function showPrev() {
+          // 轮转下标
+          right = center;
+          center = left;
+          left--;
+          //　极值判断
+          if (left < 0) {
+            left = carouselLis.length - 1;
+          }
+          //添加过渡
+          setTransition(0, 1, 1);
+          // 归位
+          setTransform();
+          // 自动设置小圆点
+          setPoint();
+        }
+
+        // 滑动开始
+        function touchstartHandler(e) {
+          // 清除定时器
+          clearInterval(timer);
+          // 记录滑动开始的时间
+          startTime = Date.now();
+          // 记录手指最开始的落点
+          startX = e.changedTouches[0].clientX;
+        }
+        // 滑动持续中
+        function touchmoveHandler(e) {
+          // 获取差值 自带正负
+          var dx = e.changedTouches[0].clientX - startX;
+          // 干掉过渡
+          setTransition(0, 0, 0);
+          // 归位
+          setTransform(dx);
+        }
+        //　滑动结束
+        function touchendHandeler(e) {
+          // 在手指松开的时候，要判断当前是否滑动成功
+          var dx = e.changedTouches[0].clientX - startX;
+          // 获取时间差
+          var dTime = Date.now() - startTime;
+          // 滑动成功的依据是滑动的距离（绝对值）超过屏幕的三分之一 或者滑动的时间小于300毫秒同时滑动的距离大于30
+          if (Math.abs(dx) > screenWidth / 3 || (dTime < 300 && Math.abs(dx) > 30)) {
+            // 滑动成功了
+            // 判断用户是往哪个方向滑
+            if (dx > 0) {
+              // 往右滑 看到上一张
+              showPrev();
+            } else {
+              // 往左滑 看到下一张
+              showNext();
+            }
+          } else {
+            // 添加上过渡
+            setTransition(1, 1, 1);
+            // 滑动失败了
+            setTransform();
+          }
+
+          // 重新启动定时器
+          clearInterval(timer);
+          // 调用定时器
+          timer = setInterval(showNext, 2000);
+        }
+        // 设置过渡
+        function setTransition(a, b, c) {
+          if (a) {
+            carouselLis[left].style.transition = 'transform 1s';
+          } else {
+            carouselLis[left].style.transition = 'none';
+          }
+          if (b) {
+            carouselLis[center].style.transition = 'transform 1s';
+          } else {
+            carouselLis[center].style.transition = 'none';
+          }
+          if (c) {
+            carouselLis[right].style.transition = 'transform 1s';
+          } else {
+            carouselLis[right].style.transition = 'none';
+          }
+        }
+
+        //　封装归位
+        function setTransform(dx) {
+          dx = dx || 0;
+          carouselLis[left].style.transform = 'translateX(' + (-screenWidth + dx) + 'px)';
+          carouselLis[center].style.transform = 'translateX(' + dx + 'px)';
+          carouselLis[right].style.transform = 'translateX(' + (screenWidth + dx) + 'px)';
+        }
+        // 动态设置小圆点的active类
+        var pointsLis = points.querySelectorAll('li');
+
+        function setPoint() {
+          for (var i = 0; i < pointsLis.length; i++) {
+            pointsLis[i].classList.remove('active');
+          }
+          pointsLis[center].classList.add('active');
+        }
+      }
+    </script>
+  
+    
 </body>
+
 </html>

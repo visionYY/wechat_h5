@@ -1,135 +1,50 @@
-#pageone{
-  width:100%;
-  height:100%;
-  position: relative;
-}
-
-#myPanel{
-  display: none;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.3);
-  position: absolute;
-  left:0;
-  top:0;
-  z-index:9999;
-}
-.pagetit{
-  width:100%;
-  line-height:.3rem;
-}
-.pagelist{
-  width:60%;
-  background:#fff;
-  height:100%;
-  padding: .3rem .1rem;
-}
-.ui-header{
-  background:#fff;
-  width:100%;
-  height:.55rem;
-  display:flex;
-  padding:0 .12rem;
+.foot {
+  width: 100%;
+  height: .45rem;
+  background: #FFFFFF;
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position:fixed;
-  left:0;
-  top:0;
-  z-index:9999;
-}
-.ui-header>b>img{
-  width:95px;
-  height: auto;
-}
-.ui-header>a{
-  box-shadow: none;
-  padding:none;
-  margin-top:2px;
-}
-.ui-header>a>i.icon{
-  font-size:.2rem;
-  color:#313B5F;
-}
-.ui-header>a>i.search{
-  font-size:.20rem;
-  color:#313B5F;
-}
-h4{
-  font-size:.18rem;
-  margin-top:.2rem;
+  background:rgba(247,251,253,1);
 }
 
-.first{
-  margin-top:0;
-}
-#home{
-  font-size:.18rem;
-  color: #4D63A7;
-}
-.test{
-  width:100%;
-  display:flex;
-  height:auto;
-  margin-top:.1rem;
-  margin-bottom:.25rem;
-  flex-wrap:wrap;
-}
-.test>li{
-  padding-left:.1rem;
-  width:50%;
-  line-height:24px;
-  cursor: pointer;
-}
-.selected{
-  color:#4D63A7;
-} 
-
-.list{
-  width:100%;
-  padding:.1rem 0rem;
-  border-bottom:1px solid #F2F2F2;
-  height:auto;
-  display:flex;
-  justify-content: space-around;
-}
-.list-img{
-  width:33.3%;
-}
-.list-img>img{
-  display:block;
-  width:100%;
-  height:auto;
-}
-.list dd{
-  width:65.7%;
-  padding-left:1.5%;
-  height:auto;
-  position: relative;
-}
-.list-tit{
-  width:100%;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  font-size:.14rem;
-  color:#333333;
-}
-.list-tit:hover{
-  color: #4D63A7;
-}
-.list-but{
-  width:98%;
-  position: absolute;
-  bottom: 0;
-}
-.list-but>span.sp-time{
-  float: left;
-  font-size:.12rem;
-  color:#999999;
+.foot .Imgbox {
+  text-align:center;
+  height: 100%;
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.list-but>span.sp-kind{
-  font-size:.12rem;
-  float: right;
-  color:#4D63A7;
+
+.Imgbox img {
+  display: block;
+  width: .22rem;
+  height: .22rem;
+  margin-bottom:.03rem;
+}
+
+.Imgbox{
+  margin-top:.04rem;
+  font-size: .12rem;
+  width: 100%;
+  text-align: center;
+  color: #666666;
+}
+.one img {
+  display: block;
+  width: .17rem;
+  height: .22rem;
+}
+.clo{
+  font-size: .12rem;
+  width: 100%;
+  text-align: center;
+  color: #305CBA !important;
 }

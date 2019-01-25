@@ -1,0 +1,158 @@
+.dia_tit{
+  font-size:.15rem;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(26,29,53,1);
+  padding: .15rem;
+  padding-bottom:.08rem;
+  line-height:.2rem;
+  /* border-bottom:1px solid rgba(222,222,222,1); */
+}
+.write{
+  width:100%;
+  height:4.3rem;
+  padding:.07rem .15rem;
+  border-top:1px solid rgba(222,222,222,1);
+  border-bottom:1px solid rgba(222,222,222,1);  
+}
+textarea{
+  width:100%;
+  height:100%;
+}
+
+.cover,.cover1{
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:999;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.5);
+}
+.cover1{
+  display: none;
+}
+.box2{
+  width:70%;
+  margin:58% 12%;
+  height: 1.75rem;
+  background:rgba(255,255,255,1);
+  border-radius:.05rem;
+}
+.box3{
+  width: 80%;
+  margin: 58% 10%;
+  height: 1.75rem;
+  background:rgba(255,255,255,1);
+  border-radius:.05rem;
+  position: relative;
+}
+.boximg{
+  width:100%;
+  text-align: center;
+  padding-top:.16rem;
+}
+.boximg>img{
+  width:.54rem;
+  height:.54rem;
+}
+.boxtit{
+  width:1005;
+  text-align: center;
+  line-height:.22rem;
+  font-size:.14rem;
+  font-family:PingFang-SC-Medium;
+  margin-top:.06rem;
+  color:rgba(51,51,51,1);
+}
+.btns{
+  width:100%;
+  padding:0 .13rem;
+  display: flex;
+  margin-top:.18rem;
+  justify-content:space-between;
+}
+.yesl,.nor{
+  width:46%;
+  height:.34rem;
+  background:rgba(255,255,255,1);
+  border:1px solid rgba(220,220,220,1);
+  border-radius:.04rem;
+  text-align: center;
+  line-height:.34rem;
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+}
+.nor{
+  border: 1px solid rgba(48, 92, 186, 1);
+  color: rgba(48, 92, 186, 1);
+}
+
+footer{
+  height:.8rem;
+  padding:.175rem .15rem;
+}
+.issue{
+  width:100%;
+  height:.44rem;
+  line-height: .44rem;
+  background:rgba(48,92,186,1);
+  border:1px solid rgba(220,220,220,1);
+  border-radius:.04rem;
+  font-size:.15rem;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+}
+
+.btop{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  padding: .1rem .2rem;
+}
+.tuz{
+  width:.7rem;
+}
+.tuz img{
+  width:100%;
+}
+.tz_tit{
+  margin-left:.1rem;
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  line-height:.16rem;
+  padding-top:.1rem;
+}
+.tz_con{
+  font-size:.1rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(248,74,94,1);
+  line-height:.15rem;
+  padding: 0 .1rem;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.tz_btn{
+  width:1.1rem;
+  height: .32rem;
+  background: rgba(255,255,255,1);
+  border: 1px solid rgba(48,92,186,1);
+  border-radius: 4px;
+  font-size: .11rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(48,92,186,1);
+  line-height:22px;
+  position: absolute;
+  left: 50%;
+  bottom: .1rem;
+  margin-left: -.55rem;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        body {
+            background-color: #000;
+        }
+ 
+        .box {
+            width: 800px;
+            margin: 100px auto;
+            border: 1px solid #fff;
+        }
+ 
+        .contro1 {
+            width: 100%;
+            height: 50px;
+            background: #fff;
+            display: flex;
+            border-top: 1px solid #fff;
+        }
+ 
+        .contro1 .right,
+        .contro1 .left {
+            flex-basis: 50px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+        }
+ 
+        .contro1 .progress {
+            flex: 1;
+        }
+ 
+        .contro1 .current {
+            width: 0%;
+            height: 50px;
+            background-color: gray;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="box">
+        <video src="./movie/bglb.mp4"></video>
+        <div class="contro1">
+            <a class="left icon-play"></a>
+            <div class="progress">
+                <div class="current"></div>
+            </div>
+            <a class="right icon-fullscreen"></a>
+        </div>
+    </div>
+</body>
+ 
+</html>
+ 
+<script>
+    var video = document.querySelector("video");
+ 
+    // 点击播放暂停按钮的操作
+    document.querySelector(".left").onclick = function () {
+        // 判断当前是处于暂停还是播放状态
+        if (video.paused == true) {
+            video.play();
+            this.classList.add("icon-pause")
+            this.classList.remove("icon-play");
+        } else {
+            video.pause();
+            this.classList.remove("icon-pause");
+            this.classList.add("icon-play");
+        }
+    }
+ 
+    // 更新进度条
+    // 拿到视频的总时长,求百分比,播放时调用
+    video.ontimeupdate = function () {
+        var percent = video.currentTime / video.duration * 100 + "%";
+        document.querySelector(".current").style.width = percent;
+    }
+ 
+    // 点击进度条,更新处理
+    document.querySelector(".progress").onclick = function (target) {
+        // 拿到进度条的宽度
+        var width = this.offsetWidth;
+        // 拿到当前点击位置的x坐标
+        var x = target.offsetX;
+        video.currentTime = x / width * video.duration;
+    }
+    //4. 全屏的功能的实现
+    document.querySelector(".right").onclick = function () {
+        //进入全屏
+        video.webkitRequestFullScreen();
+    }
+ 
+</script>

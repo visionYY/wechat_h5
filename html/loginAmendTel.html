@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>修改手机号</title>
+  <link rel="icon" type="image/x-icon" href="../images/wetalkTV.ico" />
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/loginAmend.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="line"></div>
+    <div class="form">
+      <p class="pas">新手机号：&nbsp;<input type="text" id="user" placeholder="请输入手机号"><span></span></p>
+      <p class="pas">验证码：&nbsp;<input type="text" placeholder="请输入验证码" id="yz" ><input type="button" id="btn" value="获取验证码" onclick="settime(this)" /></p>
+      <!-- <button id="btn">免费获取验证码</button> -->
+      <button class="btn" type="button" disabled="disabled">提交</button>
+    </div>
+    <p class="no">请填写正确的手机号！</p>
+    <p class="yes">修改成功！</p>
+  </div>
+
+  <script src="../js/jquery.min.js"></script>
+  <script type="text/javascript">
+  //获取验证码倒计时
+    var countdown=60;
+    function settime(val) {
+        if (countdown == 0) {
+            val.removeAttribute("disabled");
+            val.value="免费获取验证码";
+            countdown = 60;
+        } else {
+            val.setAttribute("disabled", true);
+            val.value="重新发送(" + countdown + ")";
+            countdown--;
+            setTimeout(function() {
+                settime(val)
+            },1000)
+        }
+    }
+
+  //button禁用可用
+  function content(){
+    var user = $("#user").val().trim();
+    var userlen = user.length;
+    var yz = $("#yz").val().trim();
+    var yzlen = yz.length;
+
+    if(userlen&&yzlen!=0){
+      $(".btn").attr("disabled",false);
+      $('.btn').addClass('btn1')
+    }else{
+      $(".btn").attr("disabled",true);
+      $('.btn').removeClass('btn1')
+    }
+  }
+  user.onkeyup = function(){
+    content();
+  }
+  yz.onkeyup = function(){
+    content()
+  }
+
+  
+  $('.btn').click(function(){
+    var userV = $("#user").val();
+    var phone = /^1[34578]\d{9}$/;
+    if(phone.test(userV)){
+      $(".yes").css("display","block");
+      setTimeout(function(){//定时器 
+        $(".yes").css("display","none");
+      },2000);
+    }else{
+      $(".no").css("display","block");
+      setTimeout(function(){//定时器 
+        $(".no").css("display","none");
+      },2000);
+    }
+  })
+</script>
+</body>
+
+</html>

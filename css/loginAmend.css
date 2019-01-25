@@ -1,0 +1,133 @@
+.line{
+  width:100%;
+  height:.1rem;
+  background:rgba(245,245,245,1);
+}
+.form{
+  width:100%;
+  height:auto;
+}
+.pas,.pas1{
+  width:100%;
+  border-bottom: 1px solid rgba(222,222,222,1);
+  height: .38rem;
+  padding: .07rem .13rem;
+  font-size:.13rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(51,51,51,1);
+  position: relative;
+}
+input::-webkit-input-placeholder {
+  font-size:.12rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(170,170,170,1);
+}
+input{
+  font-size:.13rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(51,51,51,1);
+}
+input[type="button"]{
+  position: absolute;
+  width: 26%;
+  border: none;
+  background: none;
+  font-size:.12rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(230,191,131,1);
+  top: .11rem;
+  right: .0rem;
+}
+.btn{
+  position: fixed;
+  bottom:.5rem;
+  width:93%;
+  margin: 0 3.5%;
+  height:.44rem;
+  border-radius:.04rem;
+  font-size:.14rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(255,255,255,1);
+  border: 1px solid rgba(222,222,222,1);
+}
+.btn1{
+  background:rgba(48,92,186,1);
+  box-shadow:0px 3px 18px 0px rgba(88,120,188,0.55);
+}
+
+.no{
+  width: 50%;
+  margin-left:25%;
+  position: fixed;
+  top:40%;
+  height:.36rem;
+  background:rgba(0,0,0,1);
+  opacity:0.62;
+  border-radius:.05rem;
+  font-size:.13rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:.36rem;
+  text-align: center;
+  display: none;
+}
+.yes{
+  width: 40%;
+  margin-left:30%;
+  position: fixed;
+  top:40%;
+  height:.36rem;
+  background:rgba(0,0,0,1);
+  opacity:0.62;
+  border-radius:.05rem;
+  font-size:.13rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:.36rem;
+  text-align: center;
+  display:none;
+}
+
+.pas{
+  position: relative;
+  z-index: 1;
+}
+#eyesShow{
+  position: absolute;
+  top: .13rem;
+  right: .11rem;
+  width: .21rem;
+  height: .12rem;
+  display: none;
+  z-index: 99999;
+}
+#eyesHide{
+  position: absolute;
+  top: .12rem;
+  right: .12rem;
+  width:.2rem;
+  height:.15rem;
+  z-index: 99999;
+}
+.pas1{
+  position: relative;
+}
+#close{
+  position: absolute;
+  top: .13rem;
+  right: .15rem;
+  width: .13rem;
+  height: .13rem;
+  display:none;
+}
+.t{
+  font-size:.12rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,.9);
+  padding:.1rem .15rem;
+}

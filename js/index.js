@@ -15,10 +15,4 @@ $(function(){
      $(this).addClass("hover").siblings().removeClass("hover"); //a标签显示，同辈元素隐藏  
   }) 
 
-  $("tutor-tit span").click(function(){ //导师更多
-
-  })
-  $("#load").click(function(){ //导师更多
-
-  })
 })

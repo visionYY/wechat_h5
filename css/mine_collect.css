@@ -1,0 +1,396 @@
+.orangerb{
+  width:100%;
+  height:.45rem;
+  overflow: hidden;
+  border-bottom: .05rem solid rgba(243,243,244,1);;
+}
+#oranger{
+  width:100%;
+  height:115%;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  justify-content:space-between;
+  padding:0 .7rem;
+}
+#oranger>li{
+  background:none;
+  display: inline-block;
+  height: .4rem;
+  padding: .13rem .1rem;
+  font-size:.14rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+#oranger>li:hover{
+  color:#305CBA;
+}
+.hover {
+  border-bottom:3px solid #305CBA;
+  color:#305CBA!important;
+}
+.box {
+	display:none
+}
+
+.list{
+  width:100%;
+  height:auto;
+}
+.lis{
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+  padding:0 .2rem;
+  height:.4rem;
+  line-height:.4rem;
+}
+.lis>span{
+  line-height:.4rem;
+}
+.lis>span:nth-child(1){
+  width:45%;
+  font-size:.12rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,.9);
+}
+.lis>span:nth-child(2){
+  width:13%;
+  font-size:.12rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.lis>span:nth-child(3){
+  width:42%;
+  font-size:.12rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  text-align: right;
+}
+
+
+.boxAfter,.boxAfter2{
+  display: none;
+}
+.tabBtn,.tabBtn11{
+  width:100%;
+  text-align: right;
+  height:.38rem;
+  padding: 0 .15rem;
+  border-bottom:1px solid rgba(222,222,222,1);
+  font-size:.12rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:.38rem;
+  position: relative;
+}
+.tabBtn>img,.tabBtn11>img{
+  width:.14rem;
+  height:.13rem;
+  position: absolute;
+  right: .44rem;
+  top: .12rem;
+}
+.comB{
+  width:100%;
+  border-bottom:1px solid rgba(242,242,242,1);
+  padding: .1rem .15rem;
+  display: flex;
+  justify-content:space-between;
+}
+.comB dt{
+  width: 21%;
+}
+.comB dt img{
+  width:100%;
+  border-radius:.04rem;
+}
+.comB dd{
+  width:79%;
+  padding-left:.1rem;
+  position: relative;
+}
+.dl_tit{
+  padding-top:.05rem;
+  font-size:.14rem;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.dl_introfuce{
+  font-size:.12rem;
+  margin-top:.1rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+.dl_time{
+  font-size:.1rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  position: absolute;
+  bottom:.05rem;
+}
+
+.tabBtn2{
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+  height:.38rem;
+  padding: 0 .15rem;
+  border-bottom:1px solid rgba(222,222,222,1);
+  line-height:.38rem;
+}
+.text{
+  font-size:.12rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.checkboxF{
+  font-size:.12rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  position: relative;
+}
+.checkboxF input[type="checkbox"] + label{
+  position: absolute;
+  top: .12rem;
+  left: -.17rem;
+  display: inline-block;
+  width: .14rem;
+  height: .14rem;
+  border-radius:50%;
+  border: 1px solid rgba(49,58,94,1);;
+}
+
+.checkboxF input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: .01rem;
+  top: .02rem;
+  width: .07rem;
+  height: .02rem;
+  border: 2px solid rgba(49,58,94,1);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  -ms-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-40deg);
+}
+.checkboxF input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.boxs{
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(242,242,242,1);
+  padding: .1rem .15rem;
+}
+.boxs2{
+  border-bottom: .05rem solid rgba(245,245,245,1)!important;
+}
+
+.checkboxF2{
+  width: 10%;
+}
+.comB2{
+  width:90%;
+  display: flex;
+  justify-content:space-between;
+}
+.comB2 dt{
+  width: 21%;
+}
+.comB2 dt img{
+  width:100%;
+  border-radius:.04rem;
+}
+.comB2 dd{
+  width:79%;
+  padding-left:.1rem;
+  position: relative;
+}
+.dl_tit2{
+  padding-top:.05rem;
+  font-size:.14rem;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.dl_introfuce2{
+  font-size:.12rem;
+  margin-top:.1rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}
+.dl_time2{
+  font-size:.1rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  position: absolute;
+  bottom:.05rem;
+}
+
+/*隐藏掉我们模型的checkbox*/
+.my_protocol .input_agreement_protocol {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  display: none;
+}
+/*未选中时*/        
+.my_protocol .input_agreement_protocol+span {
+  width: .22rem;
+  height: .22rem;
+  background-color: red;
+  display: inline-block;
+  background: url(../images/icon_checkbox.png) no-repeat;
+  background-position-x: 0px;
+  background-position-y: -215px;
+  position: relative;
+  top: .26rem;
+}
+.sp{
+  top: .7rem!important;
+}
+/*选中checkbox时,修改背景图片的位置*/            
+.my_protocol .input_agreement_protocol:checked+span {
+  background-position: 0 0px
+}
+input{
+  display:none;
+}
+
+.delete,.delete2{
+  width:100%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  height: .44rem;
+}
+#del,#del2{
+  width:50%;
+  background:rgba(255,255,255,1);
+  border:1px solid rgba(220,220,220,1);
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+}
+#cancel,#cancel2{
+  width:50%;
+  background:rgba(48,92,186,1);
+  border:1px solid rgba(48,92,186,1);
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(255,255,255,1);
+}
+
+.cover1{
+  width:70%;
+  background: rgba(0,0,0,.4);
+  height:.4rem;
+  line-height:.4rem;
+  text-align: center;
+  position: fixed;
+  top:50%;
+  left:15%;
+  color: #fff;
+  border-radius:.06rem;
+  font-size:.12rem;
+  display:none;
+}
+
+.detailsTop{
+  width:100%;
+  padding:.15rem;
+  background: #fff;
+  margin-bottom: .05rem;
+}
+.detailsTop2{
+  padding:0 ! important;
+}
+.detaileName{
+  position: relative;
+}
+.detaileName>dl{
+  width:100%;
+  position: relative;
+}
+.detaileName>dl>dd{
+  position: absolute;
+  left: 0;
+  top: .02rem;
+  width: .27rem;
+  height: .27rem;
+  border-radius: 50%;
+}
+.detaileName>dl>dd>img{
+  width: .27rem;
+  height: .27rem;
+  border-radius: 50%;
+}
+.detaileName>dl>dt{
+  padding-left: .32rem;
+}
+.dt_name{
+  font-size:.14rem;
+  font-family:PingFang-SC-Medium;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  line-height:.28rem;
+}
+.detailCon{
+  width:100%;
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(51,51,51,1);
+  line-height:.18rem;
+  margin-top: .1rem;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.detailTit{
+  width:100%;
+  background:rgba(245,245,245,1);
+  border-radius:8px;
+  margin-top:.08rem;
+  padding:.1rem .12rem;
+}
+.tit{
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(48,92,186,1);
+}
+.t_con{
+  display: flex;
+  justify-content:space-between;
+  margin-top:.13rem;
+}
+.time,.con{
+  font-size:.12rem;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>回复</title>
+  <link rel="icon" type="image/x-icon" href="../images/wetalkTV.ico" />
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/diacuss_reply1.css">
+</head>
+<style>
+</style>
+<body>
+  <div class="wrapper">
+    <p class="top">回复<em>Peter</em> <span  id="num">(0/500)</span>：</p>
+    <textarea id="textarea" maxlength="500" oninput="content()" placeholder='在这里回复Peter'></textarea>
+    <button class="btn" type="button" disabled="disabled">提交</button>
+  </div>
+
+  <script src="../js/jquery.min.js"></script>
+  <script type="text/javascript">
+      function content(){
+          var text=document.getElementById("textarea");
+          //文本框可以接收的长度
+          var i=500;
+          //获取输入的文字的长度
+          var textLength=text.value.length;
+          console.log(i-textLength)
+          if(i-textLength>=0){
+              var divcontent=document.getElementById("num").innerText;
+              document.getElementById("num").innerText="("+(i-textLength)+"/500)";
+              $(".btn").attr("disabled",false);
+              $('.btn').addClass('btn1')
+          }
+          if(i-textLength==500){
+            console.log(1)
+            $(".btn").attr("disabled",true);
+            $('.btn').removeClass('btn1')
+          }
+        }
+  </script>
+</body>
+
+</html>

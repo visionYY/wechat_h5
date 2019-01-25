@@ -1,0 +1,75 @@
+.wrapper{
+  background:rgba(245,245,245,1);
+  margin-bottom:.45rem;
+}
+.diacuss_box{
+  margin-top:.05rem;
+  background:#fff;
+  padding: 0 .15rem;
+  padding-bottom: .15rem;
+}
+.dia_tit{
+  position: relative;
+  padding-left: .14rem;
+  height:.38rem;
+  line-height:.38rem;
+}
+.dia_tit em{
+  position: absolute;
+  top: .11rem;
+  left:0;
+  display:inline-block;
+  width:.05rem;
+  height:.15rem;
+  background:rgba(48,92,186,1);
+  border-radius:3px;
+}
+.dia{
+  width:100%;
+  background:rgba(255,255,255,1);
+  border:1px solid rgba(222,222,222,1);
+  border-radius:4px;
+  padding:.13rem .165rem;
+}
+.dia_topic{
+  font-size:.13rem;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  line-height:.2rem;
+}
+.dia_label{
+  height:.12rem;
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  line-height:.12rem;
+  text-align: right;
+  opacity:.8;
+}
+.dia_relevance{
+  display: flex;
+  justify-content: space-between;
+  height:.35rem;
+  line-height:.35rem;
+}
+.left{
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(33,57,147,1);
+}
+.right a{  
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(102,102,102,1);
+  margin-left: .2rem;
+  position: relative;
+}
+.right img{
+  position: absolute;
+  top: .02rem;
+    left: -.15rem;
+    width: .14rem;
+    height: .14rem;
+}

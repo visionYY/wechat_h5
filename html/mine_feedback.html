@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>回复</title>
+  <link rel="icon" type="image/x-icon" href="../images/wetalkTV.ico" />
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/mine_feedback.css">
+</head>
+<style>
+</style>
+<body>
+  <div class="wrapper">
+    <textarea id="textarea" maxlength="500" oninput="content()" placeholder='在这里输入您遇到的问题~'></textarea>
+    <div class="line"></div>
+    <div class="numbox">
+      <p class="tel">您的联系方式（非必填）：</p>
+      <p class="num"><input type="text" placeholder='可以填写手机号或微信号'></p>
+    </div>
+    <button class="btn" type="button" disabled="disabled">提交</button>
+  </div>
+
+  <script src="../js/jquery.min.js"></script>
+  <script type="text/javascript">
+      function content(){
+          var text=document.getElementById("textarea");
+          //获取输入的文字的长度
+          var textLength=text.value.length;
+          if(textLength!=0){
+            $(".btn").attr("disabled",false);
+            $('.btn').addClass('btn1')
+          }else{
+            $(".btn").attr("disabled",true);
+            $('.btn').removeClass('btn1')
+          }
+        }
+  </script>
+</body>
+
+</html>

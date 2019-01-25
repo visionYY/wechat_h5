@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>回复详情</title>
+  <link rel="icon" type="image/x-icon" href="../images/wetalkTV.ico" />
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/viewTheDetails.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="detailsTop">
+      <div class="detaileName">
+        <dl>
+          <dd><img src="../images/jbdx_code.png" alt=""></dd>
+          <dt>
+            <p class="dt_name">peter</p>
+            <p class="dt_time">15分钟前</p>
+          </dt>
+        </dl>
+        <div class="collect"><img src="../images/icon_shoucang@2x.png" alt="">收藏</div>
+      </div>
+      <div class="detailCon">
+          上市是一条捷径，三只松鼠有自身短板，投资机构并不心，因此才有对赌协议。未来食品零售电商行业发展，需平台提高准入门槛，加强前置事项规范和管理，加12121212121
+      </div>
+      <div class="detailTit">
+        <p class="tit"># 是谁拽住了三只松鼠的尾巴，导致其IPO失败？</p>
+        <p class="t_con">
+          <span class="time">2018.12.27</span>
+          <span class="con">1000人发表观点</span>
+        </p>
+      </div>
+    </div>
+    <div class="detailsBot">
+      <dl>
+        <dd><img src="../images/jbdx_code.png" alt=""></dd>
+        <dt>
+          <p class="dt_namet">哈哈哈</p>
+          <p class="dt_con">上市是一条捷径，三只松鼠有自身短板，投资机构并不心，因
+            此才有对赌协议。未来食品零售电商行业发展，需平台高准入
+            门槛，加强前置事项规范和管理，加</p>
+        </dt>
+      </dl>
+      <dl>
+        <dd><img src="../images/jbdx_code.png" alt=""></dd>
+        <dt>
+          <p class="dt_namet">大漠孤者<em>回复</em><span>哈哈哈</span></p>
+          <p class="dt_con">上市是一条捷径，三只松鼠有自身短板，投资机构并不心，因
+            此才有对赌协议。未来食品零售电商行业发展，需平台高准入
+            门槛，加强前置事项规范和管理，加</p>
+        </dt>
+      </dl>
+    </div>
+  </div>
+  <div class="cover">
+    <div class="box1">
+      <p class="yes">删除回复</p>
+      <p class="no">取消</p>
+    </div>
+    <div class="box2">
+      <p class="boxtit">确认删除你的观点？</p>
+      <div class="btns">
+        <p class="yesl">确认</p>
+        <p class="nor">取消</p>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p class="input"><input type="text" placeholder="我来说两句..."></p>
+    <p class="fun">
+      <a href="diacuss.html" class="Imgbox"><img src="../images/icon_haibao@2x.png" />议一议</a>
+      <a href="#" class="Imgbox"><img src="../images/icon_dianzan1@2x.png" />转发</a>
+      <a href="#" class="Imgbox"><img src="../images/icon_dianzan1@2x.png" />赞同</a>
+    </p>
+  </footer>
+  <script src="../js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.detailsBot dl').each(function(index) {
+        $(this).eq(index).on('touchstart',function(e){
+          time = setTimeout(function(){
+            $('.cover').fadeIn()
+            $('.yes').click(function(){
+              $('.box1').hide();
+              $('.box2').show();
+            })
+            $('.no').click(function(){
+              $('.cover').hide();
+            })
+            $('.nor').click(function(){
+              $('.cover').hide();
+            })
+          }, 500);
+        })
+      })
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+.top{
+  height:.26rem;
+  border-bottom:1px solid rgba(222,222,222,1);
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(153,153,153,1);
+  line-height:.26rem;
+  padding:0 3.5%;
+}
+.top>span{
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(153,153,153,1);
+  line-height:.26rem;
+}
+.top>em{
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  color:#6C90DC;
+  line-height:.26rem;
+}
+#textarea{
+  width:93%;
+  height:4.4rem;
+  border:none;
+  padding:3% 3.5%;  
+  font-size:.12rem;
+  font-family:PingFang-SC-Medium;
+  line-height:.16rem;
+  border-bottom:1px solid rgba(222,222,222,1);
+  opacity:0.72;
+  margin-bottom:.15rem;
+}
+.btn{
+  width:93%;
+  margin: 0 3.5%;
+  height:.44rem;
+  border-radius:.04rem;
+  font-size:.14rem;
+  font-family:PingFang-SC-Medium;
+  color:rgba(255,255,255,1);
+  border: 1px solid rgba(222,222,222,1);
+}
+.btn1{
+  background:rgba(48,92,186,1);
+}
