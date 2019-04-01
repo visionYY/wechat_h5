@@ -1,23 +1,49 @@
+let arr = ['http://1256356427.vod2.myqcloud.com/12b315c8vodgzp1256356427/5f10fd575285890786075905266/lX0XpoiwLjIA.mp3',
+            'http://1256356427.vod2.myqcloud.com/12b315c8vodgzp1256356427/692d71f85285890785428381754/2yCuEkHxLo4A.mp3',
+            'http://1256356427.vod2.myqcloud.com/12b315c8vodgzp1256356427/5f10fd575285890786075905266/lX0XpoiwLjIA.mp3']
+
+
+$('.class_list').click(function () {
+      let th = $(this).index()
+      let permissions = true
+      if(permissions){
+          let indexMius = arr[th]
+          $("audio").prop("src",indexMius)
+          var audio = document.getElementsByTagName('audio')[0];
+          audio.load();
+          audio.oncanplay = function () {
+                var audioPlayer = document.getElementById('audioPlayer');
+                audioPlayer.click()
+                updateProgress(audio)
+
+          }
+
+      }
+})
+
+
 document.addEventListener('DOMContentLoaded', function () {
   // 设置音频文件名显示宽度
   var element = document.querySelector('.audio-right');
   var maxWidth = window.getComputedStyle(element, null).width;
-
   // 初始化音频控制事件
-  initAudioEvent();
+  //   initAudioEvent();
 }, false);
 
-function initAudioEvent() {
+
+
+
+function initAudioEvent( audioPlayer = document.getElementById('audioPlayer') ) {
   var audio = document.getElementsByTagName('audio')[0];
-  var audioPlayer = document.getElementById('audioPlayer');
+  // var audioPlayer = document.getElementById('audioPlayer');
 
   // 点击播放/暂停图片时，控制音乐的播放与暂停
   audioPlayer.addEventListener('click', function () {
+
       // 监听音频播放时间并更新进度条
       audio.addEventListener('timeupdate', function () {
           updateProgress(audio);
       }, false);
-
       // 监听播放完成事件
       audio.addEventListener('ended', function () {
           audioEnded();
@@ -32,6 +58,7 @@ function initAudioEvent() {
           audio.pause();
           audioPlayer.src = '../images/play.png';
       }
+
   }, false);
 
   // 点击进度条跳到指定点播放
@@ -130,10 +157,13 @@ function dragProgressDotEvent(audio) {
 * @param {object} audio - audio对象
 */
 function updateProgress(audio) {
+  console.log(audio.currentTime,'进度',audio.duration)
   var value = audio.currentTime / audio.duration;
+
   document.getElementById('progressBar').style.width = value * 100 + '%';
   document.getElementById('progressDot').style.left = value * 100 + '%';
   document.getElementById('audioCurTime').innerText = transTime(audio.currentTime);
+  $('.audio-length-total').text(transTime(audio.duration))
 }
 
 /**
@@ -168,7 +198,7 @@ function transTime(value) {
 /**
 * 格式化时间显示，补零对齐
 * eg：2:4  -->  02:04
-* @param {string} value - 形如 h:m:s 的字符串 
+* @param {string} value - 形如 h:m:s 的字符串
 */
 function formatTime(value) {
   var time = "";
@@ -182,6 +212,4 @@ function formatTime(value) {
 
   return time;
 }
-
-
 

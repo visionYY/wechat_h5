@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/all.css">
   <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
 </head>
-  <style>
+  <!-- <style>
       /* 清除标签默认边距 */
       body,
       ul,
@@ -89,17 +90,60 @@
         background:rgba(229,229,229,1);
         margin-left:5px;
       }
+    </style> -->
+    <style>
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-container2 {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      .swiper-pagination-bullet {
+        width:8px;
+        height:2.5px;
+        background:rgba(125,125,125,1);
+        border-radius:2px;
+      }
+      .swiper-pagination-bullet-active {
+        background:rgba(229,229,229,1);
+      }
+      .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+        bottom: 7px;
+      }
     </style>
 <body>
   <div class="wrapper">
     <div class="banner">
       <section class="carousel">
-        <ul class="box">
-          <li><a href="#"><img src="../images/2.JPG" alt=""></a></li>
-          <li><a href="#"><img src="../images/banner.jpeg" alt=""></a></li>
-          <li><a href="#"><img src="../images/2.JPG" alt=""></a></li>
-        </ul>
-        <ol class="points"></ol>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="../images/2.JPG" alt=""></div>
+              <div class="swiper-slide"><img src="../images/banner.jpeg" alt="" srcset=""></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
       </section>
       <!-- <video controls>
         <source src="somevideo.webm" type="video/webm">
@@ -133,12 +177,20 @@
       <h4 class="bou_tit">精品课</h4>
       <div class="banner2">
         <section class="carousel2">
-          <ul class="box2">
+          <!-- <ul class="box2">
             <li><a href="#"><img src="../images/2.JPG" alt=""></a></li>
             <li><a href="#"><img src="../images/banner.jpeg" alt=""></a></li>
             <li><a href="#"><img src="../images/2.JPG" alt=""></a></li>
           </ul>
-          <ol class="points2"></ol>
+          <ol class="points2"></ol> -->
+          <div class="swiper-container2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="../images/2.JPG" alt=""></div>
+              <div class="swiper-slide"><img src="../images/banner.jpeg" alt="" srcset=""></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
         </section>
         <!-- <video controls>
           <source src="somevideo.webm" type="video/webm">
@@ -181,7 +233,7 @@
 
   <script src="../js/jquery.min.js"></script>
   <script src="../js/swiper.min.js"></script>
-  <script>
+  <!-- <script>
       window.onload = function () {
         var carousel2 = document.querySelector('.carousel2');
         var carouselUl2 = carousel2.querySelector('.box2');
@@ -499,8 +551,23 @@
           pointsLis[center].classList.add('active');
         }
       }
-    </script>
-  
+    </script> -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        loop: true,
+      },
+    });
+    var swiper2 = new Swiper('.swiper-container2', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        loop: true,
+      },
+    });
+  </script>
     
 </body>
 

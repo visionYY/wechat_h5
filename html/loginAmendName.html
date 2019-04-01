@@ -69,6 +69,7 @@
     }
   });
 
+  
   //button禁用可用
   function content(){
     var pwd = $("#pwd").val().trim();
@@ -89,7 +90,19 @@
   }
   pwd1.onkeyup = function(){
     content()
+    var pwd1 = $("#pwd1").val().trim();
+    var pwd1len = pwd1.length;
+    console.log(pwd1len)
+    if(pwd1len!=0){
+      $("#close").css("display","block");
+    }else if(pwd1len==0){
+      $("#close").css("display","none");
+    }
   }
+  $("#close").click(function(){
+    $("#close").css("display","none");
+    $("#pwd1").val('');
+  })
 
   
   $('.btn').click(function(){

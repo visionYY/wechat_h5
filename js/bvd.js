@@ -1,7 +1,10 @@
-(function($) {
-  var bvd = function(dom) {
+(function ($) {
+  window.onunload = function () {
+    window.localStorage.setItem('mytest', 11111)
+  }
+  var bvd = function (dom) {
     var that = this;
-    $.ready(function() {
+    $.ready(function () {
       //获取视频元素
       that.video = document.querySelector(dom || "video");
       //获取视频父元素
@@ -20,10 +23,10 @@
   var pro = bvd.prototype;
 
   //记录信息
-  pro.initInfo = function() {
+  pro.initInfo = function () {
     var that = this;
     //在onload状态下，offsetHeight才会获取到正确的值
-    window.onload = function() {
+    window.onload = function () {
       that.miniInfo = {
         //mini状态时的样式
         width: that.video.offsetWidth + "px",
@@ -51,8 +54,8 @@
     };
   };
 
-  pro.initEm = function() {
-    //先添加上一个按钮
+  pro.initEm = function () {
+    //先添加播放按钮
     this.vtop = document.createElement("img");
     this.vtop.src = "../images/icon_zuojin@2x.png";
     this.vtop.className = "vtop";
@@ -64,19 +67,19 @@
     this.simg.className = "pause";
     this.vRoom.appendChild(this.simg);
 
-    //先添加下一个按钮
+    //先添加播放按钮
     this.vbelow = document.createElement("img");
     this.vbelow.src = "../images/icon_youjin@2x.png";
     this.vbelow.className = "vbelow";
     this.vRoom.appendChild(this.vbelow);
 
-    //先添加音频按钮
+    //先添加播放按钮
     this.vaudio = document.createElement("img");
     this.vaudio.src = "../images/icon_yinpin@2x.png";
     this.vaudio.className = "vaudio";
     this.vRoom.appendChild(this.vaudio);
 
-    //先添加收藏按钮
+    //先添加播放按钮
     this.vcollect = document.createElement("img");
     this.vcollect.src = "../images/icon_vshoucang.png";
     this.vcollect.className = "vcollect";
@@ -96,40 +99,32 @@
       "../images/icon_quanping@2x.png" +
       '" alt=""></div>';
     this.vRoom.appendChild(this.vC);
-
   };
+  var nowPage = "small";
 
-  pro.initEvent = function() {
+  pro.initEvent = function () {
     var that = this;
-
     var isScroll = false;
-    var nowPage = "small";
 
-    //切换音频
-    this.vaudio.addEventListener("touchend", function() {
-      location.href ="audio.html"
-    });
-    
     //给播放按钮图片添加事件
-    this.vimg.addEventListener("tap", function() {
+    this.vimg.addEventListener("tap", function () {
       isScroll = false;
       that.video.play();
     });
 
-
     //获取到元数据
-    this.video.addEventListener("loadedmetadata", function() {
+    this.video.addEventListener("loadedmetadata", function () {
       that.vDuration = this.duration;
       that.vC.querySelector(".duration").innerHTML = stom(that.vDuration);
     });
 
     var allEvents = {};
     //视频播放事件
-    this.video.addEventListener("play", function() {
+    this.video.addEventListener("play", function () {
       if (!isScroll) {
         that.vimg.style.display = "none";
         that.simg.style.display = "block";
-        setTimeout(function() {
+        setTimeout(function () {
           that.simg.style.display = "none";
           that.vtop.style.display = "none";
           that.vbelow.style.display = "none";
@@ -213,7 +208,7 @@
         // 滚动条圆点拖动开始
         that.vC
           .querySelector("#cricle")
-          .addEventListener("touchstart", function(e) {
+          .addEventListener("touchstart", function (e) {
             isThat.pause();
             startY = e.touches[0].clientY;
             btnLeft = getComputedStyle(that.vC.querySelector("#cricle"), null)[
@@ -223,7 +218,7 @@
         // 滚动条圆点拖动时
         that.vC
           .querySelector("#cricle")
-          .addEventListener("touchmove", function(e) {
+          .addEventListener("touchmove", function (e) {
             var endFlo = e.touches[0].clientY - startY + parseFloat(btnLeft);
             if (endFlo > allW) {
               endFlo = allW;
@@ -237,7 +232,7 @@
         // 滚动条圆点拖动结束
         that.vC
           .querySelector("#cricle")
-          .addEventListener("touchend", function(e) {
+          .addEventListener("touchend", function (e) {
             var overTime = stom((leftAll / allW) * isThat.duration);
             that.vC.querySelector(".current").innerHTML = overTime;
             var nowTime =
@@ -253,7 +248,7 @@
     });
 
     //视频播放中事件
-    this.video.addEventListener("timeupdate", function() {
+    this.video.addEventListener("timeupdate", function () {
       var currentPos = this.currentTime; //获取当前播放的位置
       //更新进度条
       var percentage = (100 * currentPos) / that.vDuration;
@@ -265,7 +260,7 @@
     });
 
     //视频点击暂停或播放事件
-    this.video.addEventListener("tap", function() {
+    this.video.addEventListener("tap", function () {
       if (this.paused || this.ended) {
         //暂停时点击就播放
         if (this.ended) {
@@ -278,7 +273,7 @@
         //播放时点击就暂停
         // this.pause();
         var olthat = this;
-        that.simg.addEventListener("tap", function() {
+        that.simg.addEventListener("tap", function () {
           that.vimg.style.display = "block";
           that.simg.style.display = "none";
           olthat.pause();
@@ -304,7 +299,7 @@
     });
 
     //暂停or停止
-    this.video.addEventListener("pause", function() {
+    this.video.addEventListener("pause", function () {
       that.simg.style.display = "none";
       that.vimg.style.display = "block";
       that.vtop.style.display = "block";
@@ -317,12 +312,10 @@
     });
 
     //转换音频
-    this.vaudio.click(function() {
-      
-    });
+    this.vaudio.click(function () {});
 
     //视频手势右滑动事件
-    this.eve("swiperight", function() {
+    this.eve("swiperight", function () {
       if (that.isMax) {
         return that.setVolume(0.2);
       }
@@ -330,7 +323,7 @@
     });
 
     //视频手势左滑动事件
-    this.eve("swipeleft", function() {
+    this.eve("swipeleft", function () {
       if (that.isMax) {
         return that.setVolume(-0.2);
       }
@@ -338,7 +331,7 @@
     });
 
     //视频手势上滑动事件
-    this.eve("swipeup", function() {
+    this.eve("swipeup", function () {
       if (that.isMax) {
         return that.setCurrentTime(-5);
       }
@@ -346,14 +339,14 @@
     });
 
     //视频手势下滑动事件
-    this.eve("swipedown", function() {
+    this.eve("swipedown", function () {
       if (that.isMax) {
         return that.setCurrentTime(5);
       }
       that.setVolume(-0.2);
     });
 
-    this.vC.querySelector(".fill").addEventListener("tap", function() {
+    this.vC.querySelector(".fill").addEventListener("tap", function () {
       //that.nativeMax();
       that.switch();
       if (nowPage == "small") {
@@ -365,7 +358,13 @@
   };
 
   //全屏 mini 两种模式切换
-  pro.switch = function() {
+  pro.switch = function () {
+    if (nowPage == 'small') {
+      document.getElementsByClassName('controls')[0].getElementsByTagName('div')[0].style.width = "80%"
+      document.getElementsByClassName('controls')[0].getElementsByTagName('div')[3].style.flex = 15
+    } else {
+      document.getElementsByClassName('controls')[0].getElementsByTagName('div')[0].style.width = "64%"
+    }
     var vR = this.vRoom;
     //获取需要转换的样式信息
     var info = this.isMax ? this.miniInfo : this.maxInfo;
@@ -376,7 +375,7 @@
   };
 
   //使用原生支持的方式播放
-  pro.nativeMax = function() {
+  pro.nativeMax = function () {
     if (!window.plus) {
       //非html5+环境
       return;
@@ -398,15 +397,15 @@
   };
 
   //跳转视频进度 单位 秒
-  pro.setCurrentTime = function(t) {
+  pro.setCurrentTime = function (t) {
     this.video.currentTime += t;
   };
   //设置音量大小 单位 百分比 如 0.1
-  pro.setVolume = function(v) {
+  pro.setVolume = function (v) {
     this.video.volume += v;
   };
   //切换播放地址
-  pro.setUrl = function(nUrl) {
+  pro.setUrl = function (nUrl) {
     var v = this.video;
     var source = v.querySelector("source");
     source.src = v.src = nUrl;
@@ -418,7 +417,7 @@
   var events = {};
 
   //增加 或者删除事件    isBack 是否返回  这次添加事件时 被删除 的上一个 事件
-  pro.eve = function(ename, callback, isBack) {
+  pro.eve = function (ename, callback, isBack) {
     var fn;
     if (callback && typeof callback == "function") {
       isBack && (fn = arguments.callee(ename));
@@ -441,9 +440,7 @@
   }
 
   var nv = null;
-  $.bvd = function(dom) {
+  $.bvd = function (dom) {
     return nv || (nv = new bvd(dom));
   };
-
-
 })(mui);

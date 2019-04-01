@@ -1,7 +1,6 @@
 .wrapper{
   height:100%;
   width:100%;
-  background: url(../images/bg_fenxiangyiti@2x.png) no-repeat;
   background-size:100% 100%;
   position: relative;
 }
@@ -32,6 +31,12 @@
   position: relative;
 }
 
+.imgt{
+  width:100%;
+}
+.imgt>img{
+  width:100%;
+}
 .bg{
   width:100%;
   height:auto;

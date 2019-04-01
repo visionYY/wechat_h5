@@ -15,15 +15,22 @@
 </style>
 <body>
   <div class="wrapper">
+    <div class="imgt"><img src="../images/bg_fenxiangyiti@2x.png" alt="" id="testImg"></div>
     <div class="btn">
-      <p class="left">保存本地</p>
+      <p class="left" onclick="save()">保存本地</p>
       <p class="right">分享</p>
     </div>
   </div>
 
   <script src="../js/jquery.min.js"></script>
   <script type="text/javascript">
-      
+
+  function save() {
+    var img = document.getElementById("testImg");
+    var alink = document.createElement("a");
+    alink.href = img.src;
+    alink.click();
+  }
   </script>
 </body>
 

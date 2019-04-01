@@ -463,6 +463,7 @@
   padding-top:.01rem;
   background:rgba(245,245,245,1);
   margin-top: .07rem;
+  display: none;
 }
 .topicbox{
   width: 100%;
@@ -507,7 +508,7 @@ input[type="checkbox"],input[type="radio"]{
   top: .03rem;
   left: .03rem;
 }
-input:checked+.label:after{
+input:checked+label:after{
   width: .06rem;
   height: .06rem;
   border: 5px solid rgba(48, 92, 186, 1);

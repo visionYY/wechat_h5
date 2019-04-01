@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <audio id="music1"  preload loop="loop"></audio>
+  <div style="width:720px; height:60px;" luyinpath="/weiqingshu/music/music.mp3" class="ceshiqiehuan">测试1</div>
+  <div style="width:720px; height:60px;" luyinpath="/dongjun12/music/music.mp3" class="ceshiqiehuan">测试2</div>
+  <div style="width:720px; height:60px;" luyinpath="/kelaweiloushu/music/music.mp3" class="ceshiqiehuan">测试3</div>
+  <div style="width:720px; height:60px;" luyinpath="/lingjuli/music/music.mp3" class="ceshiqiehuan">测试4</div>
+
+  <script src="../js/jquery.min.js"></script>
+  <script>
+
+  $('.ceshiqiehuan').each(function () {
+    $(this).on('touchstart', function () {
+
+        $('#music1')[0].pause();
+        var luyinpath = $(this).attr('luyinpath');
+        $('#music1').attr('src', luyinpath);
+        $('#music1')[0].play();
+    })
+})</script>
+</body>
+</html>

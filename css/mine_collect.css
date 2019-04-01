@@ -143,20 +143,29 @@
 
 .tabBtn2{
   width:100%;
-  display: flex;
-  justify-content:space-between;
   height:.38rem;
   padding: 0 .15rem;
   border-bottom:1px solid rgba(222,222,222,1);
   line-height:.38rem;
+  display: none;
+}
+.tabBtn22{
+  width:100%;
+  height:.38rem;
+  padding: 0 .15rem;
+  border-bottom:1px solid rgba(222,222,222,1);
+  line-height:.38rem;
+  display: none;
 }
 .text{
   font-size:.12rem;
   font-family:PingFang-SC-Regular;
   font-weight:400;
+  float: left;
   color:rgba(51,51,51,1);
 }
 .checkboxF{
+  float: right;
   font-size:.12rem;
   font-family:PingFang-SC-Regular;
   font-weight:400;
@@ -205,10 +214,11 @@
 }
 
 .checkboxF2{
-  width: 10%;
+  width: 14%;
+  display: none;
 }
 .comB2{
-  width:90%;
+  width:100%;
   display: flex;
   justify-content:space-between;
 }
@@ -281,14 +291,16 @@ input{
 }
 
 .delete,.delete2{
+  display: none;
   width:100%;
-  display: flex;
   position: fixed;
   bottom: 0;
   height: .44rem;
 }
 #del,#del2{
+  float: left;
   width:50%;
+  height: .44rem;
   background:rgba(255,255,255,1);
   border:1px solid rgba(220,220,220,1);
   font-size:.12rem;
@@ -296,7 +308,9 @@ input{
   color:rgba(102,102,102,1);
 }
 #cancel,#cancel2{
+  float: right;
   width:50%;
+  height: .44rem;
   background:rgba(48,92,186,1);
   border:1px solid rgba(48,92,186,1);
   font-size:.12rem;
